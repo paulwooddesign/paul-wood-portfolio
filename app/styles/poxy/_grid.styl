@@ -1,0 +1,36 @@
+//////////////////////////////////////////////////////
+// Container(div) Ratio Sizes
+// Get custom zone copy widths based on gutter settings
+//////////////////////////////////////////////////////
+// poxy-copy-width($zone-e-min, $zone-e-max, $gx-E, $gy-E, $gs-E)
+// poxy-copy-width($zone-d-min, $zone-d-max, $gx-D, $gy-D, $gs-D)
+// poxy-copy-width($zone-c-min, $zone-c-max, $gx-C, $gy-C, $gs-C)
+// poxy-copy-width($zone-b-min, $zone-b-max, $gx-B, $gy-B, $gs-B)
+poxy-copy-width($zone-a-min, $zone-a-max, $gx-A, $gy-A, $gs-A)
+
+//////////////////////////////////////////////////////
+// Container(div) Ratio Sizes
+//////////////////////////////////////////////////////
+
+// width (x)
+// poxy-zone-width(E, e, $zone-e-min, $zone-e-max, $numerators-E, $gx-E, $gs-E)
+// poxy-zone-width(D, d, $zone-d-min, $zone-d-max, $numerators-D, $gx-D, $gs-D)
+// poxy-zone-width(C, c, $zone-c-min, $zone-c-max, $numerators-C, $gx-C, $gs-C)
+// poxy-zone-width(B, b, $zone-b-min, $zone-b-max, $numerators-B, $gx-B, $gs-B)
+poxy-zone-width(A, a, $zone-a-min, $zone-a-max, $numerators-A, $gx-A, $gs-A)
+
+// height (y)
+// poxy-zone-height(E, e, $zone-e-min, $zone-e-max, $numerators-E, $gx-E, $gs-E)
+// poxy-zone-height(D, d, $zone-d-min, $zone-d-max, $numerators-D, $gx-D, $gs-D)
+// poxy-zone-height(C, c, $zone-c-min, $zone-c-max, $numerators-C, $gx-C, $gs-C)
+// poxy-zone-height(B, b, $zone-b-min, $zone-b-max, $numerators-B, $gx-B, $gs-B)
+//poxy-zone-height(A, a, ($zone-a-min + 1), $zone-a-max, $numerators-A, $gx-A, $gs-A)
+poxy-zone-height(A, a, $zone-a-min, $zone-a-max, $numerators-A, $gx-A, $gs-A)
+
+
+// zone margin offsets and other zone exclusive styles
+// zone-core(e, $zone-e-min, $zone-e-max, $gxe, $gye)
+// zone-core(d, $zone-d-min, $zone-d-max, $gxd, $gyd)
+// zone-core(c, $zone-c-min, $zone-c-max, $gxc, $gyc)
+// zone-core(b, $zone-b-min, $zone-b-max, $gxb, $gyb)
+zone-core-max(a, $zone-a-min, $zone-a-max, $gxa, $gya)

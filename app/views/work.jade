@@ -1,0 +1,88 @@
+include mixins/thumbs.jade
+//- .poxy.ap11a_112.mb0
+
+.parallax__layer.parallax__layer__0.bg90(style="backround-image: url('/images/home/parallax0.png')")
+  .stars
+  //- .twinkling
+  //- .clouds
+
+  section
+    .sw
+      .cw.a_12b_23c_11.rel.dark
+        .circle.oxy9.a18a_18b14b_14.z10.ml1
+
+
+        .oxy.a11a_12.mt0
+          .oxy.tx-c
+            .title.tera.mt1 WORK
+
+
+.parallax__layer.parallax__layer__1.bgcb(style="background-image: url('/images/home/parallax1.png')")
+.parallax__layer.parallax__layer__2.bgcb(style="background-image: url('/images/home/parallax2.png')")
+.parallax__layer.parallax__layer__3.bgcb(style="background-image: url('/images/home/parallax3.png')")
+.parallax__layer.parallax__layer__4.bgcb(style="background-image: url('/images/home/parallax4.png')")
+.parallax__layer.parallax__layer__5.bgcb(style="background-image: url('/images/home/parallax5.png')")
+.parallax__layer.parallax__layer__6.bgcb(style="background-image: url('/images/home/parallax6.png')")
+
+
+.parallax__cover
+  //- .gold-bar
+  .gold-bar
+
+  section.clear.full
+    div.sw
+      div.cw
+        a(href="#/motion")
+          button.poxyap13a_18.m0
+            .oxy motion
+        a(href="#/work")
+          button.poxyap13a_18.m0
+            .oxy interactive
+        a(href="#/resume")
+          button.poxyap13a_18.m0
+            .oxy static
+
+  .gold-bar
+
+
+  section.thumbs
+    div.sw
+      div.cw
+        //- +thumb_3()
+        +thumb_1('#/chimera', 'chimera')(style='background-image: url(images/work/chimera-home.png);')
+        +thumb_1('#/linhart-pr', 'Linhart PR')(style='background-image: url(images/work/linhartpr-home-a.png);')
+        +thumb_1('#/way-better-snacks', 'Way Better Snacks')(style='background-image: url(images/work/wbs-home-a.png);')
+        +thumb_1('#/angelic-bakehouse', 'Angelic Bakehouse')(style='background-image: url(images/work/angelic-home-a.png);')
+        +thumb_1('#/biotta-juices', 'Biotta')(style='background-image: url(images/work/biotta-home-a.png);')
+        +thumb_1('#/petchup', 'Petchup')(style='background-image: url(images/work/petchup-home-a.png);')
+        +thumb_1('#/madhava', 'Madhava')(style='background-image: url(images/work/madhava-home-a.png);')
+        +thumb_1('#/snack-out-loud', 'Snack Out Loud')(style='background-image: url(images/work/sol-home-a.png);')
+        +thumb_1('#/rocky-mountain-table', 'Rocky Mountain Table')(style='background-image: url(images/work/rmtc-home-a.png);')
+        +thumb_1('#/workhorse45', 'Workhorse 45')(style='background-image: url(images/work/w45-home-a.png);')
+        +thumb_1('#/prefare', 'Prefare')(style='background-image: url(images/work/prefare-home-a.png);')
+        +thumb_1('#/cmi-associates', 'CMI Associates')(style='background-image: url(images/work/cmi-home-a.png);')
+        +thumb_1('#/auburn-moon-agency', 'Auburn Moon Agency')(style='background-image: url(images/work/ama-home-a.png);')
+        +thumb_1('#/shena-razmi', 'Shena Razmi')(style='background-image: url(images/work/sr-home-a.png);')
+        +thumb_1('#/anchor-bay-steel', 'Anchor Bay Steel')(style='background-image: url(images/work/abs-home-a.png);')
+        +thumb_1('#/michigan-bulldogs', 'Michigan Bulldogs')(style='background-image: url(images/work/mdogs-home-a.png);')
+        +thumb_1('#/zinga-yogurt', 'Zinga Froyo')(style='background-image: url(images/work/zinga-home-a.png);')
+        +thumb_1('#/snomass-club', 'Snowmass Club')(style='background-image: url(images/work/smc-home-a.png);')
+
+
+
+
+  //- - var n = 0
+  //- - var i = 24
+  //- section
+  //-   div.sw
+  //-     div.cw
+  //-       while n < i
+  //-         figure(style='background-image: url(http://placehold.it/350x350/333333&text=THUMB);').grad1.a14a_14b14b_14c14c_14d14d_14e12e_12
+  //-           a(href="#")
+  //-             span.paxyap11ap_11
+  //-             span.oxy.a313a_313b313b_313c313c_313d313d_313e313e_313.bg-wood
+  //-             span.oxy.a313a_313b313b_313c313c_313d313d_313e313e_313.shadow
+  //-             span.oxy.a313a_313b313b_313c313c_313d313d_313e313e_313.grad2
+  //-             span(style='background-image: url(images/work/chimera-home.png);').oxy.bgct.a313a_313b313b_313c313c_313d313d_313e313e_313
+  //-             span.oxy.a313a_313b313b_313c313c_313d313d_313e313e_313.shadow
+  //-               h4.oxy6.mb1= n++

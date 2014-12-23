@@ -1,0 +1,464 @@
+//////////////////////////////////////////////////////////////////////
+// ZONE Breakpoints
+/////////////////////////////////////////////////////////////////////
+
+zone($zone)
+
+  // ZONE E
+  if $zone == E
+    @media (min-width: (($zone-e-min * ($column + $gutter) - $gutter) / $em)rem) and (max-width: (($zone-d-min * ($column + $gutter) - $gutter) / $em)rem)
+      {block}
+
+  if $zone == D
+    @media (min-width: (($zone-d-min * ($column + $gutter) - $gutter) / $em)rem) and (max-width: (($zone-c-min * ($column + $gutter) - $gutter) / $em)rem)
+      {block}
+
+  if $zone == C
+    @media (min-width: (($zone-c-min * ($column + $gutter) - $gutter) / $em)rem) and (max-width: (($zone-b-min * ($column + $gutter) - $gutter) / $em)rem)
+      {block}
+
+  if $zone == B
+    @media (min-width: (($zone-b-min * ($column + $gutter) - $gutter) / $em)rem) and (max-width: (($zone-a-min * ($column + $gutter) - $gutter) / $em)rem)
+      {block}
+
+  if $zone == A
+    @media (min-width: (($zone-a-min * ($column + $gutter) - $gutter) / $em)rem)
+      {block}
+
+  // else
+  //   @media (min-width: $zone)
+  //     {block}
+
+
+/////////////////////////////////
+// Functions
+/////////////////////////////////
+poxy-left-nav-margin($zone-min, $zone-max, $gx, $gy, $gs)
+  margin-left: (((((4 - ($gs/6)) * ($column + $gx) - $gx) / $em) + (($gx) / $em))rem)
+
+
+//poxy-left-nav-margin($zone-a-min, $zone-a-max, $gx-A, $gy-A, $gs-A)
+
+
+// Copy Width - Ratios are based on this width
+poxy-copy-width($zone-min, $zone-max, $gx, $gy, $gs)
+  for i in ($zone-min..$zone-max)
+    section
+      @media (min-width: ((i * ($column + $gx) - $gx) / $em)rem)
+        .cw
+          width: (((((i - ($gs)) * ($column + $gx) - $gx) / $em) + (($gx) / $em))rem)
+
+        .cw > *
+          margin-left (($gx) / $em)rem
+          margin-bottom (($gy) / $em)rem
+
+        .cw .wrap > *
+          margin-left (($gx) / $em)rem
+          margin-bottom (($gy) / $em)rem
+
+//
+poxy-scale($i, $scale, $x1, $x2, $zone-gutter, $gs)
+  // if $i <= $zone-e-max
+  //   return ((((($i - $gs)*$x1)/$x2) * ($column + $zone-gutter) - $zone-gutter) / $em)rem
+  // else
+    return ((((($i - $gs)*$x1)/$x2) * ($column + $zone-gutter) - $zone-gutter) / $em)rem
+
+
+poxy-wrap-scale($i, $scale, $x1, $x2, $zone-gutter, $gs)
+    return (((((($i + 1) - $gs)*$x1)/$x2) * ($column + $zone-gutter) - $zone-gutter) / $em)rem
+
+
+//  Box Width
+poxy-zone-width($zone, $zone-class-lower, $zone-min, $zone-max, $numerators, $zone-gutter, $gs)
+  for $i in ($zone-min..$zone-max)
+    for $size in $numerators
+      if $size[0] == $zone
+        for $i in ($zone-min..$zone-max)
+          @media (min-width:(($i * ($column + $zone-gutter) - $zone-gutter) / $em)rem)
+            for $i2 in $ratio-range
+              \[class\*\={$zone-class-lower}{$size[1]}{$i2}\]
+                width poxy-scale($i, $size[0], $size[1], $i2, $zone-gutter, $gs)
+
+              \[class\*\={$zone-class-lower}{$size[1]}{$i2}\] \ \.wrap
+                width poxy-wrap-scale($i, $size[0], $size[1], $i2, $zone-gutter, $gs)
+// Box Height
+poxy-zone-height($zone, $zone-class-lower, $zone-min, $zone-max, $numerators, $zone-gutter, $gs)
+  for $i in ($zone-min..$zone-max)
+    for $size in $numerators
+      if $size[0] == $zone
+        for $i in ($zone-min..$zone-max)
+          @media (min-width:(($i * ($column + $zone-gutter) - $zone-gutter) / $em)rem)
+            for $i2 in $ratio-range
+              \[class\*\={$zone-class-lower}\_{$size[1]}{$i2}\]
+                 height poxy-scale($i, $size[0], $size[1], $i2, $zone-gutter, $gs)
+
+
+//////////////////////////////////////////////////////
+// Zone Section Core Classes
+// - this allows custom grids in different zones
+////////////////////////////////////////////////////
+zone-core($z, $zone-min, $zone-max, $gx, $gy)
+
+  @media (min-width: (($zone-min * ($column + $gutter) - $gutter) / $em)rem) and (max-width: (($zone-max * ($column + $gutter) - $gutter) / $em)rem)
+    // Hide
+    .h{$z}
+      display none !important
+    p
+      margin-top ($gy/2)
+      line-height (28/$em)
+      letter-spacing: .01em
+
+    // nav a
+    //   margin-top ($gy/8)
+    //   line-height (28/$em)
+    //   letter-spacing: .01em
+
+    .mb1
+      margin-bottom ($gy/1) !important
+    .mb2
+      margin-bottom ($gy/2) !important
+    .mb3
+      margin-bottom ($gy/3) !important
+    .mb4
+      margin-bottom ($gy/4) !important
+
+    .mt1
+      margin-top ($gy/1) !important
+    .mt2
+      margin-top ($gy/2) !important
+    .mt3
+      margin-top ($gy/3) !important
+    .mt4
+      margin-top ($gy/4) !important
+
+    .mr1
+      margin-right ($gx/1) !important
+    .mr2
+      margin-right ($gx/2) !important
+    .mr3
+      margin-right ($gx/3) !important
+    .mr4
+      margin-right ($gx/4) !important
+
+    .ml1
+      margin-left ($gx/1) !important
+    .ml2
+      margin-left ($gx/2) !important
+    .ml3
+      margin-left ($gx/3) !important
+    .ml4
+      margin-left ($gx/4) !important
+
+    .m1
+      margin ($gy/1) ($gx/1) !important
+    .m2
+      margin ($gy/2) ($gx/2) !important
+    .m3
+      margin ($gy/3) ($gx/3) !important
+    .m4
+      margin ($gy/4) ($gx/4) !important
+
+
+    // Text Alignment (tx(zone)-)
+    .tx{$z}-c
+      text-align center
+    .tx{$z}-r
+      text-align right
+    .tx{$z}-l
+      text-align left
+    .tx{$z}-v
+      -webkit-box-sizing border-box
+      box-sizing border-box
+      display table
+      > *
+        display table-cell
+        margin auto 0
+        vertical-align middle
+
+    section
+      margin-top 0
+      padding-top $gy
+
+      //poxy-left-nav-margin($zone-e-min, $zone-e-max, $gx-E, $gy-E, $gs-E)
+
+      &:first-child
+        //margin-top: ($gyA/2) !important
+        //padding-top 0 !important
+        //margin-top 0 !important
+      // &:last-child
+      //   margin-bottom: -($gyA) !important
+      &:after
+        margin-top: -($gy) !important
+
+      .sw
+        margin-left -($gx/2)
+
+      .wrap
+        margin-left -($gx/1)
+
+      .cw0
+        margin-bottom: ($gy) !important
+        margin-right: -($gy) !important
+
+    footer
+      //padding-top: ($gy) !important
+    [class*=pox{$z}]
+      height auto !important
+    [class*=poxy{$z}]
+      float left
+    [class*=qoxy{$z}]
+      float right
+    [class*=paxy{$z}]
+      position absolute
+      top 0
+      left 0
+    [class*=qaxy{$z}]
+      position absolute
+      top 0
+      right 0
+    [class*=baxy{$z}]
+      position absolute
+      bottom 0
+      left 0
+    [class*=daxy{$z}]
+      position absolute
+      bottom 0
+      right 0
+    // Percent Width
+    [class*={$z}p11]
+      width 100%
+    [class*={$z}p34]
+      width 75%
+    [class*={$z}p12]
+      width 50%
+    [class*={$z}p25]
+      width 40%
+    [class*={$z}p14]
+      width 25%
+    [class*={$z}p15]
+      width 20%
+    [class*={$z}p23]
+      width 66.6666666%
+    [class*={$z}p13]
+      width 33.3333333%
+    [class*={$z}p90]
+      width 90%
+    [class*={$z}p97]
+      width 97%
+    [class*={$z}p98]
+      width 98%
+    [class*={$z}p99]
+      width 99%
+
+    // Percent Height
+    [class*={$z}p_11]
+      height 300%
+    [class*={$z}p_11]
+      height 100%
+    [class*={$z}p_34]
+      height 75%
+    [class*={$z}p_12]
+      height 50%
+    [class*={$z}p_25]
+      height 40%
+    [class*={$z}p_14]
+      height 25%
+    [class*={$z}p_15]
+      height 20%
+    [class*={$z}p_23]
+      height 66.6666666%
+    [class*={$z}p_13]
+      height 33.3333333%
+    [class*={$z}p_90]
+      height 90%
+    [class*={$z}p_98]
+      height 98%
+    [class*={$z}p_99]
+      height 99%
+
+
+
+//////////////////////////////////////////////////////
+// Zone Section Core Classes
+// - this allows custom grids in different zones
+////////////////////////////////////////////////////
+zone-core-max($z, $zone-min, $zone-max, $gx, $gy)
+  // if $z = a
+  //   $zone-max = 50
+
+  @media (min-width: (($zone-min * ($column + $gutter) - $gutter) / $em)rem)
+    // Hide
+    .h{$z}
+      display none !important
+    p
+      margin-top ($gy/2)
+      line-height (28/$em)
+      letter-spacing: .01em
+
+    // nav a
+    //   margin-top ($gy/8)
+    //   line-height (28/$em)
+    //   letter-spacing: .01em
+
+    .mb1
+      margin-bottom ($gy/1) !important
+    .mb2
+      margin-bottom ($gy/2) !important
+    .mb3
+      margin-bottom ($gy/3) !important
+    .mb4
+      margin-bottom ($gy/4) !important
+
+    .mt1
+      margin-top ($gy/1) !important
+    .mt2
+      margin-top ($gy/2) !important
+    .mt3
+      margin-top ($gy/3) !important
+    .mt4
+      margin-top ($gy/4) !important
+
+    .mr1
+      margin-right ($gx/1) !important
+    .mr2
+      margin-right ($gx/2) !important
+    .mr3
+      margin-right ($gx/3) !important
+    .mr4
+      margin-right ($gx/4) !important
+
+    .ml1
+      margin-left ($gx/1) !important
+    .ml2
+      margin-left ($gx/2) !important
+    .ml3
+      margin-left ($gx/3) !important
+    .ml4
+      margin-left ($gx/4) !important
+
+    .m1
+      margin ($gy/1) ($gx/1) !important
+    .m2
+      margin ($gy/2) ($gx/2) !important
+    .m3
+      margin ($gy/3) ($gx/3) !important
+    .m4
+      margin ($gy/4) ($gx/4) !important
+
+
+    // Text Alignment (tx(zone)-)
+    .tx{$z}-c
+      text-align center
+    .tx{$z}-r
+      text-align right
+    .tx{$z}-l
+      text-align left
+    .tx{$z}-v
+      -webkit-box-sizing border-box
+      box-sizing border-box
+      display table
+      > *
+        display table-cell
+        margin auto 0
+        vertical-align middle
+
+    section
+      margin-top 0
+      padding-top $gy
+
+      //poxy-left-nav-margin($zone-e-min, $zone-e-max, $gx-E, $gy-E, $gs-E)
+
+      &:first-child
+        //margin-top: ($gyA/2) !important
+        //padding-top 0 !important
+        //margin-top 0 !important
+      // &:last-child
+      //   margin-bottom: -($gyA) !important
+      &:after
+        margin-top: -($gy) !important
+      .sw
+        margin-left -($gx/2)
+      .wrap
+        margin-left -($gx/1)
+      .cw0
+        margin-bottom: ($gy) !important
+        margin-right: -($gy) !important
+
+    footer
+      //padding-top: ($gy) !important
+    [class*=pox{$z}]
+      float left
+      height auto !important
+    [class*=poxy{$z}]
+      float left
+    [class*=qoxy{$z}]
+      float right
+    [class*=paxy{$z}]
+      position absolute
+      top 0
+      left 0
+    [class*=qaxy{$z}]
+      position absolute
+      top 0
+      right 0
+    [class*=baxy{$z}]
+      position absolute
+      bottom 0
+      left 0
+    [class*=daxy{$z}]
+      position absolute
+      bottom 0
+      right 0
+    // Percent Width
+    [class*={$z}p11]
+      width 100%
+    [class*={$z}p34]
+      width 75%
+    [class*={$z}p12]
+      width 50%
+    [class*={$z}p25]
+      width 40%
+    [class*={$z}p14]
+      width 25%
+    [class*={$z}p15]
+      width 20%
+    [class*={$z}p23]
+      width 66.6666666%
+    [class*={$z}p13]
+      width 33.3333333%
+    [class*={$z}p90]
+      width 90%
+    [class*={$z}p97]
+      width 97%
+    [class*={$z}p98]
+      width 98%
+    [class*={$z}p99]
+      width 99%
+
+    // Percent Height
+    [class*={$z}p_11]
+      height 300%
+    [class*={$z}p_11]
+      height 100%
+    [class*={$z}p_34]
+      height 75%
+    [class*={$z}p_12]
+      height 50%
+    [class*={$z}p_25]
+      height 40%
+    [class*={$z}p_14]
+      height 25%
+    [class*={$z}p_15]
+      height 20%
+    [class*={$z}p_23]
+      height 66.6666666%
+    [class*={$z}p_13]
+      height 33.3333333%
+    [class*={$z}p_90]
+      height 90%
+    [class*={$z}p_97]
+      height 97%
+    [class*={$z}p_98]
+      height 98%
+    [class*={$z}p_99]
+      height 99%

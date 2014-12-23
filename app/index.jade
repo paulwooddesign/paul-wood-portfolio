@@ -1,0 +1,220 @@
+doctype html
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+html.no-js <!--<![endif]-->
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no")
+    meta(http-equiv="cleartype", content="on")
+    meta(content="yes" name="apple-mobile-web-app-capable")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    //- Place favicon.ico and apple-touch-icon.png in the root directory
+    link(rel='apple-touch-icon', sizes='114x114', href='/apple-touch-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/apple-touch-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/apple-touch-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/apple-touch-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/apple-touch-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/apple-touch-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/apple-touch-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/apple-touch-icon-180x180.png')
+    link(rel='icon', type='image/png', href='/favicon-192x192.png', sizes='192x192')
+    link(rel='icon', type='image/png', href='/favicon-160x160.png', sizes='160x160')
+    link(rel='icon', type='image/png', href='/favicon-96x96.png', sizes='96x96')
+    link(rel='icon', type='image/png', href='/favicon-16x16.png', sizes='16x16')
+    link(rel='icon', type='image/png', href='/favicon-32x32.png', sizes='32x32')
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='msapplication-TileImage', content='/mstile-144x144.png')
+
+
+    // build:css styles/vendor.css
+    // bower:css
+    link(rel='stylesheet', href='bower_components/slick-carousel/slick/slick.css')
+    // endbower
+    // endbuild
+    // build:css(.tmp) styles/main.css
+    link(rel="stylesheet", href="styles/main.css")
+    // endbuild
+    script(type='text/javascript').
+        (function() {
+          var path = '//easy.myfonts.net/v2/js?sid=214451(font-family=Harmonia+Sans+Std+Light)&sid=214453(font-family=Harmonia+Sans+Std+Regular)&sid=214455(font-family=Harmonia+Sans+Std+SemiBold)&key=Rt6eJm96B8',
+          protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+          trial = document.createElement('script');
+          trial.type = 'text/javascript';
+          trial.async = true;
+          trial.src = protocol + path;
+          var head = document.getElementsByTagName("head")[0];
+          head.appendChild(trial);
+          })();
+
+  body(ng-app="poxy")
+    <!--[if lt IE 7]>
+    p.browsehappy
+      | You are using an
+      strong outdated
+      |  browser. Please
+      a(href="http://browsehappy.com/") upgrade your browser
+      |  to improve your experience.
+    <![endif]-->
+
+    // Add your site or application content here
+
+
+
+
+
+    //- section.clear
+    //-   div.sw
+    //-     div.cw.a_110
+
+
+
+
+    .parallax.bg20
+      //- section.paxy.clear.cd-header.z10
+      //-   .sw.ap11a_112
+      //-     .cw
+      //-       a(href="#/", style='background-image: url(images/logo.png);').logo.bg-contain.paxya112a_112.paxyb18b_110.paxyc18c_110.paxyd18d_18.paxye18e_110.mb0.mt0.ml4
+      //-
+      //-       a(href="#0").qoxy.cd-3d-nav-trigger.rel.mt3.mb0 Menu
+      //-         span
+      //-   .gold-bar
+
+      section.cd-header.clear.paxy.z9
+        .sw
+          .cw
+            //- .poxy.ap11a_112.mb0
+            .poxya12a_112.m0.rel
+              a(href="#/" style='background-image: url(images/logo.png);').poxya112a_112.m0.rel.bg-contain
+
+            a(href="#/work").poxya18a_112.m0.rel
+              button.oxy.ap11ap_11 Work
+
+            a(href="#/about").poxya18a_112.m0.rel
+              button.oxy.ap11ap_11 About
+
+            a(href="#/resume").poxya18a_112.m0.rel
+              button.oxy.ap11ap_11 Resume
+
+            a(href="#/resume").poxya18a_112.m0.rel
+              button.oxy.ap11ap_11 Open Source
+
+            a(href="#/resume").poxya112a_112.m0.rel
+              button.oxy.ap11ap_11 ?
+
+            a(href="#0").poxya112a_112.m0.rel.cd-3d-nav-trigger.mb0
+              button.oxy.ap11ap_11 menu
+                span
+
+        .gold-bar
+
+      nav(style="z-index:9999;").cd-3d-nav-container
+        ul.cd-3d-nav
+          li.cd-selected
+            a(href="#/work") Work
+          li
+            a(href="#/about") About
+          li
+            a(href="#/resume") Resume
+          li
+            a(href="#0") Open Source
+          li
+            a(href="#0") Open Source
+        span.cd-marker.color-1
+
+      main.main
+
+
+
+      div.container2(ng-view)
+
+
+      //- footer
+      //-   .gold-bar
+      //-   section.dark.hide
+      //-     div.sw
+      //-       div.cw
+      //-         figure.poxa14a_14poxb14b_14poxc12poxc_14poxd12d_14poxe11e_14
+      //-           h4 Section Heading
+      //-           nav.pox.epsilon
+      //-             a(href="#") footer link
+      //-             a(href="#") footer link
+      //-             a(href="#") footer link
+      //-             a(href="#") footer link
+      //-             a(href="#") footer link
+      //-             a(href="#") footer link
+      //-
+      //-   .gold-bar
+      //-
+      //-   section
+      //-     div.sw
+      //-       div.cw
+      //-         div.soical-icons.poxya12a_116poxyb12b_18poxye11e_18.txt-c.mb0
+      //-           figure.poxya116a_116poxyb18b_18poxye14e_18.tx-v
+      //-             a(target="_blank" href='#').oxy
+      //-               span &#xe027;
+      //-           figure.poxya116a_116poxyb18b_18poxye14e_18.tx-v
+      //-             a(target="_blank" href='#').oxy
+      //-               span &#xe027;
+      //-           figure.poxya116a_116poxyb18b_18poxye14e_18.tx-v
+      //-             a(target="_blank" href='#').oxy
+      //-               span &#xe027;
+      //-           figure.poxya116a_116poxyb18b_18poxye14e_18.tx-v
+      //-             a(target="_blank" href='#').oxy
+      //-               span &#xe027;
+      //-
+      //-         .poxya12a_116poxyb12b_18.poxye11e_16.tx-v.zeta.mb0
+      //-           span.txa-r.txb-r.txe-c &copy; 2014
+      //-             a(href="#") Poxy All Rights Reserved.
+
+    div.paxya118a_118.poxy-dev
+      span
+
+    // Google Analytics: change UA-XXXXX-X to be your site's ID
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+
+    <!--[if lt IE 9]>
+    script(src="bower_components/es5-shim/es5-shim.js")
+    script(src="bower_components/json3/lib/json3.min.js")
+    <![endif]-->
+
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/es5-shim/es5-shim.js')
+    script(src='bower_components/angular/angular.js')
+    script(src='bower_components/json3/lib/json3.min.js')
+    script(src='bower_components/angular-resource/angular-resource.js')
+    script(src='bower_components/angular-cookies/angular-cookies.js')
+    script(src='bower_components/angular-sanitize/angular-sanitize.js')
+    script(src='bower_components/angular-route/angular-route.js')
+    script(src='bower_components/slick-carousel/slick/slick.min.js')
+    script(src='bower_components/angular-slick/dist/slick.js')
+    script(src='bower_components/ngFx/dist/ngFx.js')
+    // endbower
+    // endbuild
+
+
+
+    // build:js(.tmp) scripts/main.js
+    script(src='poxy_components/poxy-3d-menu/poxy-3d-menu.js')
+    script(src="scripts/app.js")
+    script(src="scripts/controllers/main.js")
+    // endbuild

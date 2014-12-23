@@ -1,0 +1,476 @@
+//////////////////////////////////////////////////////
+// CORE
+////////////////////////////////////////////////////
+// Float - "o" stands for Float
+.poxy,
+.boxy
+  float left
+
+.qoxy,
+.doxy
+  float right
+
+nav.pox > a
+  width 100%
+  float left
+
+
+// fixed - "f" stands for Fixed
+.pfxy,
+.qfxy,
+.bfxy,
+.dfxy
+  position fixed !important
+.pfxy
+  top 0
+  left 0
+.qfxy
+  top 0
+  right 0
+.bfxy
+  bottom 0
+  left 0
+.dfxy
+  bottom 0
+  right 0
+
+
+
+
+// Absolute
+.paxy,
+.pa,
+.qaxy,
+.baxy,
+.daxy
+  position absolute
+.paxy
+  top 0
+  left 0
+.qa
+  top 0
+  right 0
+.qoxy
+  top 0
+  right 0
+.daxy
+  bottom 0
+  right 0
+.baxy
+  bottom 0
+  left 0
+
+
+
+//////////////////////////////////////
+// No Zone Percent
+//////////////////////////////////////
+
+// // Width
+// [class*="p_31"]
+//   width 300%
+// [class*="p_11"]
+//   width 100%
+// [class*="p_34"]
+//   width 75%
+// [class*="p_12"]
+//   width 50%
+// [class*="p_25"]
+//   width 40%
+// [class*="p_14"]
+//   width 25%
+// [class*="p_15"]
+//   width 20%
+// [class*="p_23"]
+//   width 66.6666666%
+// [class*="p_13"]
+//   width 33.3333333%
+//
+// // Height
+// [class*="p31"]
+//   width:300%
+// [class*="p11"]
+//   height 100%
+// [class*="p34"]
+//   height 75%
+// [class*="p12"]
+//   height 50%
+// [class*="p25"]
+//   height 40%
+// [class*="p14"]
+//   height 25%
+// [class*="p15"]
+//   height 20%
+// [class*="p23"]
+//   height 66.6666666%
+// [class*="p13"]
+//   height 33.3333333%
+
+
+
+//////////////////////////////////////////////////////////////////////
+// OXY Classes
+///////////////////////////////////////////////////////////////////
+.oxy
+  //translate(50%, -50%)
+  -ms-transform: translate(50%, -50%); /* IE 9 */
+  -webkit-transform: translate(50%, -50%); /* Chrome, Safari, Opera */
+  transform: translate(50%, -50%);
+
+  position absolute
+  right 50%
+  top 50%
+  z-index 2
+
+.ox
+  translate(0%, -50%)
+  left 0
+  position absolute
+  top 50%
+  z-index 2
+
+.ox_
+  translate(0%, -50%)
+  position absolute
+  right 0
+  top 50%
+  z-index 2
+
+.oy
+  position absolute
+  right 50%
+  top 0
+  z-index 2
+  translate(50%, 0%)
+
+
+.oy_6
+  translate(50%, 0%)
+  position absolute
+  right 50%
+  top 0
+  z-index 2
+
+.oxy12,
+.oxy1,
+.oxy2,
+.oxy3,
+.oxy4,
+.oxy5,
+.oxy6,
+.oxy7,
+.oxy8,
+.oxy9,
+.oxy10,
+.oxy11
+  display block
+  position absolute
+
+
+.oxy12
+  //translate(50%, 0%)
+  -ms-transform: translate(50%, 0%); /* IE 9 */
+  -webkit-transform: translate(50%, 0%); /* Chrome, Safari, Opera */
+  transform: translate(50%, 0%);
+  right 50%
+  top 0%
+
+.oxy1
+  //translate(50%, 0%)
+  right 25%
+  top 0
+
+.oxy2
+  //translate(0%, -50%)
+  right 0%
+  top 25%
+
+.oxy3
+  transform: translate(0%, -50%);
+  right 0%
+  top 50%
+
+.oxy4
+  translate(0%, -50%)
+  right 0% top 75%
+
+.oxy5
+  //translate(50%, 0%)
+  bottom 0%
+  right 25%
+
+.oxy6
+  //translate(50%, 0%)
+  -ms-transform: translate(50%, 0%); /* IE 9 */
+  -webkit-transform: translate(50%, 0%); /* Chrome, Safari, Opera */
+  transform: translate(50%, 0%);
+  bottom 0%
+  right 50%
+
+.oxy7
+  //translate(50%, 0%)
+  bottom 0%
+  right 75%
+
+.oxy8
+  //translate(0%, -50%)
+  left 0%
+  top 75%
+
+.oxy9
+  //translate(0%, -50%)
+  -ms-transform: translate(0%, -50%); /* IE 9 */
+  -webkit-transform: translate(0%, -50%); /* Chrome, Safari, Opera */
+  left 0%
+  top 50%
+
+.oxy10
+  //translate(0%, 50%)
+  transform translate(0%, 50%);
+  left 0%
+  top 25%
+
+.oxy11
+  transform: translate(-50%, 0%);
+  left 25%
+  top 0%
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////
+// z-index
+////////////////////////////////////////////////////
+for $i in (1..20)
+  .z{$i}
+    z-index $i
+
+
+//////////////////////////////////////////////////////
+// COMMON
+////////////////////////////////////////////////////
+.cb
+  clear both
+  display block
+  font-size 0
+  height 0
+  line-height 0
+  width 100%
+
+.rel
+  position relative
+
+section.clear
+  padding-top 0 !important
+  margin-bottom 0 !important
+  //box-shadow none !important
+  //border none !important
+  &:after,
+  &:before
+    display none !important
+  .sw
+    //margin-left 0 !important
+    margin-bottom 0 !important
+    &:after,
+    &:before
+      display none !important
+
+section.full
+  margin-left 0 !important
+  .sw
+    margin-left 0 !important
+  .cw
+    width 100% !important
+  .cw > *
+    margin-left 0
+
+button
+  background none
+  border none
+  position relative
+  float left
+
+.mb0
+  margin-bottom 0 !important
+.mt0
+  margin-top 0 !important
+.mr0
+  margin-right 0 !important
+.ml0
+  margin-left 0 !important
+
+.m0
+  margin 0 !important
+
+
+// Background (bg-)
+.bg-a
+  background-color $accent
+
+// Text (tx-)
+.tx-a
+  color $accent
+.txc,
+.tx-c
+  text-align center
+.tx-r
+  text-align right
+.tx-l
+  text-align left
+
+// Vertical Center
+// display: table is kinda hacky, but it's a good way to vertically
+// align elements that has good browser support
+.tx-v
+  -webkit-box-sizing border-box
+  box-sizing border-box
+  display table
+  > *
+    display table-cell
+    margin auto 0
+    vertical-align middle
+
+
+
+// Background Position
+.bgct,
+.bg-ct
+  background-position center top
+
+.bg-contain,
+.bg-contain *
+  background-size contain
+  background-repeat no-repeat
+
+
+
+// Overflow
+.ofh
+  overflow hidden !important
+
+
+
+
+// Box Shadow
+.bs6
+  box-shadow 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+
+.bs12
+  box-shadow 0 2px 10px 0 rgba(0, 0, 0, 0.16)
+
+// Border Radius
+.br100
+  border-radius 100%
+
+.fill
+  width 100%
+  height 100%
+
+//////////////////////////////////////////////////////
+// CORE
+////////////////////////////////////////////////////
+nav *
+  background-repeat no-repeat
+  background-size contain
+
+nav a
+  position relative
+
+section
+  //position relative
+  display block
+  float left
+  width 100%
+
+.sw // site-width
+  display block
+  float left
+  margin 0 auto
+  width: 100%
+  position relative
+
+.cw // copy-widt
+  position relative
+  //background #666
+  margin 0 auto
+
+.cw0
+  width 100%
+  float left
+
+.cw0 > *
+  margin-left 0
+
+.copy-inside
+  display inline-block
+
+section:before,
+section:after
+  //margin 0 auto
+  display block
+  float right
+  width 100%
+  content:""
+
+figure
+  background-size cover
+  background-position center center
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+ 	backface-visibility: hidden;
+  float left
+  width 100%
+  span
+    background-size cover
+    background-position center center
+
+figure  *
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   backface-visibility: hidden;
+
+
+.mr0
+  margin-right 0
+
+
+//////////////////////////////////////////////////////
+// Box Styling
+////////////////////////////////////////////////////
+header,
+footer,
+.container
+  float left
+  width 100%
+
+
+  section .site-width:before
+  section .site-width:after
+    height $sy
+    float:left
+    width:100%
+    content:""
+
+  //section .site-width{background:rgba(0,0,0, 1) !important
+  //section .site-width:before{background:rgba(0,0,0, .3) !important
+  section:nth-child(1):before
+    width 100% !important
+
+  section:nth-child(2):before
+    width:100% !important
+
+  //section:first-child:before, section:first-child:after{height:0;}
+  //section:last-child .site-width:after{margin-top:$cols1 !important;}
+
+.container:after
+footer:after
+     visibility hidden
+     display block
+     font-size 0
+     content ""
+     clear both
+     height 0
+
+footer section:last-child:after
+  display none

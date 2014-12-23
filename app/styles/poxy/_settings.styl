@@ -1,0 +1,188 @@
+/////////////////////////////////
+// DESIGN SETTINGS
+/////////////////////////////////
+if (!($body-color))
+  $body-color = #ccc
+
+if (!($body-color))
+  $body-color-light = #fff
+
+if (!($accent))
+  $accent = #AE5FBE
+
+// Colors
+green = #bee743
+purple = #AE5FBE
+blue = #26a7c7
+red = #dc243f
+brown = #a14124
+white = #fff
+
+/////////////////////////////////
+// Navigation
+// -Still need to work out equation for left fixed nav
+/////////////////////////////////
+$side-fixed-nav-size-a = 6
+
+/////////////////////////////////
+// GRID SETTINGS
+/////////////////////////////////
+$font-size = 18 // Your base font-size in pixels (18 seems to work across all browsers)
+$em = $font-size / 1rem	// Shorthand for outputting ems
+$column = 48	// The column-width of your grid in pixels
+$gutter = 24 // The width of the horizontal gutter
+$gutter-y = 24 // The height of the vertical gutter
+
+
+
+// Zone Gutters
+if (!($gx-A))
+  $gx-A = 36
+if (!($gy-A))
+  $gy-A = 48
+if (!($gs-A))
+  $gs-A = 2
+
+if (!($gx-B))
+  $gx-B = 28
+if (!($gy-B))
+  $gy-B = 28
+if (!($gs-B))
+  $gs-B = 2
+
+if (!($gx-C))
+  $gx-C = 24
+if (!($gy-C))
+  $gy-C = 24
+if (!($gs-C))
+  $gs-C = 1
+
+if (!($gx-D))
+  $gx-D = 22
+if (!($gy-D))
+  $gy-D = 20
+if (!($gs-D))
+  $gs-D = .5
+
+if (!($gx-E))
+  $gx-E = 12
+if (!($gy-E))
+  $gy-E = 24
+if (!($gs-E))
+  $gs-E = .5
+
+
+/////////////////////////////////
+// GRID Ratio Settings (Denominator)
+// Zone Numerators array ( 1/ $ratio)
+/////////////////////////////////
+
+// Development - Include all Ratios
+if (!($ratio-range))
+  $ratio-range = (1..32)
+
+if (!($numerators-A))
+  $numerators-A = (A 1) (A 2) (A 3) (A 4)
+
+if (!($numerators-B))
+  $numerators-B = (B 1) (B 2) (B 3)
+
+if (!($numerators-C))
+  $numerators-C = (C 1) (C 2) (C 3)
+
+if (!($numerators-D))
+  $numerators-D = (D 1) (D 2) (D 3)
+
+if (!($numerators-E))
+  $numerators-E = (E 1) (E 2) (E 3)
+
+/////////////////////////////////
+// Dist - Include only the ratios you need
+// N keeps numerators working as an array
+/////////////////////////////////
+
+// $ratio-range = 2 4 6 8 16 18
+
+// $numerators-A = (N 1) (A 1) (A 2)
+// $numerators-B = (N 1) (B 1)
+// $numerators-C = (N 1) (C 1)
+// $numerators-D = (N 1) (D 1)
+// $numerators-E = (N 1) (E 1)
+
+
+/////////////////////////////////
+// ZONE/BREAKPOINT SETTINGS
+/////////////////////////////////
+// The widest the site can get
+if (!($max-copy-width))
+  $max-copy-width = 20
+
+$zone-a-max = $max-copy-width
+if (!($zone-a-min))
+  $zone-a-min = 15
+
+if (!($zone-b-max))
+  $zone-b-max = 14
+if (!($zone-b-min))
+  $zone-b-min = 12
+
+if (!($zone-c-max))
+  $zone-c-max = 11
+if (!($zone-c-min))
+  $zone-c-min = 10
+
+if (!($zone-d-max))
+  $zone-d-max = 9
+if (!($zone-d-min))
+  $zone-d-min = 8
+
+if (!($zone-e-max))
+  $zone-e-max = 7
+if (!($zone-e-min))
+  $zone-e-min = 4
+
+
+// More zones can be added (who knows what will come out in 5 years)
+// $zone-f-min = 6
+// $zone-f-min = 4
+
+// $zone-g-min = 6
+// $zone-g-min = 4
+
+
+//////////////////////////////////////////////////////////////////////
+// FRAMLESS GRID SETTINGS - Joni Korpi - http://framelessgrid.com/
+/////////////////////////////////////////////////////////////////////
+$cols1 = ((1 * ($column + $gutter) - $gutter) / $em)rem
+
+// Virtical & Horizontal Gutter Size
+$gx = (($gutter) / $em)rem
+$gy = (($gutter-y) / $em)rem
+
+$gxa = (($gx-A) / $em)rem
+$gya = (($gy-A) / $em)rem
+$gxb = (($gx-B) / $em)rem
+$gyb = (($gy-B) / $em)rem
+$gxc = (($gx-C) / $em)rem
+$gyc = (($gy-C) / $em)rem
+$gxd = (($gx-D) / $em)rem
+$gyd = (($gy-D) / $em)rem
+$gxe = (($gx-E) / $em)rem
+$gye = (($gy-E) / $em)rem
+
+//spacer/Shiv - margin rythem
+$spacer = $gx
+$sx = $gx
+$sy = $gy
+
+
+$s1 = ($spacer / 1)
+$s2 = ($spacer / 2)
+$s3 = ($spacer / 3)
+$s4 = ($spacer / 4)
+$s5 = ($spacer / 5)
+$s6 = ($spacer / 6)
+$s7 = ($spacer / 7)
+$s8 = ($spacer / 8)
+$s9 = ($spacer / 9)
+$s10 = ($spacer / 10)

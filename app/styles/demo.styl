@@ -1,0 +1,943 @@
+poxy-dev = true
+poxy-skin-3d = true
+/////////////////////////////////
+// DESIGN SETTINGS
+/////////////////////////////////
+$body-color = #111
+$body-color-light = #ccc
+$header-bg = #222
+$accent = #dda100
+black = #141415
+
+/////////////////////////////////
+// GRID Ratio Settings (Denominator)
+// Zone Numerators array ( 1/ $ratio)
+/////////////////////////////////
+
+// Development - Include all Ratios
+$ratio-range = (1..32)
+
+$numerators-A = (A 1) (A 2) (A 3) (A 4)
+$numerators-B = (B 1) (B 2) (B 3)
+$numerators-C = (C 1) (C 2) (C 3)
+$numerators-D = (D 1) (D 2) (D 3)
+$numerators-E = (E 1) (E 2) (E 3)
+
+/////////////////////////////////
+// GRID SETTINGS
+/////////////////////////////////
+
+$gx-A = 36
+$gy-A = 48
+$gs-A = 2
+
+$gx-B = 28
+$gy-B = 28
+$gs-B = 2
+
+$gx-C = 24
+$gy-C = 24
+$gs-C = 1
+
+$gx-D = 22
+$gy-D = 20
+$gs-D = .5
+
+$gx-E = 12
+$gy-E = 24
+$gs-E = .5
+
+/////////////////////////////////
+// ZONE/BREAKPOINT SETTINGS
+/////////////////////////////////
+
+$max-copy-width = 20
+$zone-a-min = 15
+
+$zone-b-max = 14
+$zone-b-min = 12
+
+$zone-c-max = 11
+$zone-c-min = 10
+
+$zone-d-max = 9
+$zone-d-min = 8
+
+$zone-e-max = 7
+$zone-e-min = 4
+
+
+@import 'poxy/poxy'
+
+// font-family: 'Harmonia Sans Std Light'
+// font-family: 'Harmonia Sans Std Regular'
+// font-family: 'Harmonia Sans Std SemiBold'
+
+
+.bg0
+  background transparent !important
+  box-shadow none !important
+
+.bgf
+  background-attachment fixed
+
+.bgrb
+  background-position right bottom
+
+.bgcb
+  background-position center bottom
+
+.bgrt
+  background-position right top
+
+.ofh
+  overflow hidden !important
+
+
+.bgs100
+  background-size 100% !important
+
+/////////////////////////////////
+// Styles
+///////////////////////////////
+body
+  //font-family 'Lato' sans-serif
+  font-family "Harmonia Sans Std Regular", "Courier New", Courier, monospace
+  font-size .8rem
+  background-color: #111
+  background url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat
+  background #fff
+  //background-image url(http://subtlepatterns.com/patterns/binding_dark.png)
+  //background: repeating-linear-gradient(-45deg, #EFC1CB , #EFC1CB 30px, #F2F2F2 30px, #F2F2F2 40px, #C2E8F5 40px, #C2E8F5 70px,#F2F2F2 70px, #F2F2F2 80px);
+
+// button:hover *
+//   color #fff
+
+button:hover
+  background-image: linear-gradient(to top, #fff, #aaa);
+  //background-image linear-gradient(to top, $accent, #575757) !important;
+
+header
+  background $header-bg
+
+  .logo
+    background-size contain
+    background-repeat no-repeat
+
+  nav a
+    color black
+
+
+footer
+  position relative
+
+.container
+  //background $body-color
+  font-size .5rem
+
+.thumbs
+  figure
+    //overflow hidden
+    //box-shadow: inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .5), 0 1.5em 3em -1em rgba(0, 0, 0, 0.5);
+    position relative
+    //font-size .8rem
+    background-color rgba(255,255,255,0.10)
+    border-radius 3%
+
+    .thumb-title
+      color #222
+      opacity 0
+
+    span
+      border-radius 3%
+
+    .thumb
+      //box-shadow inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .2)
+      background-position 50% 0%
+      // -webkit-filter: grayscale(80%)
+      // -moz-filter: grayscale(80%)
+      // -ms-filter: grayscale(80%)
+      // -o-filter: grayscale(80%)
+
+      -webkit-filter: grayscale(100%)
+      -moz-filter: grayscale(100%)
+      -ms-filter: grayscale(100%)
+      -o-filter: grayscale(100%)
+
+
+
+
+
+  figure:hover
+    box-shadow: inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
+    position relative
+    //font-size .8rem
+    background-color rgba(255,255,255,0.10)
+    //border-radius 3px
+
+
+
+    .thumb
+      -webkit-filter: grayscale(0%)
+      -moz-filter: grayscale(0%)
+      -ms-filter: grayscale(0%)
+      -o-filter: grayscale(0%)
+
+    .shadow
+      opacity 0
+
+    .color-filter
+      opacity .0
+      transition transform 0.8s
+      //transform translateX(50%) translateY(-100%)
+      //background-image linear-gradient(45deg, rgba(#463c2c,.3) 0%, rgba(#fdd333,.3) 26%, rgba(#fffcaf,.5) 65%, rgba(#b67b03,.4) 55%, rgba(#341c02,.3) 80%, rgba(#160f07,.3) 100%)
+
+
+
+
+
+
+
+//#meat figure span,
+.shadow
+  transition opacity 0.8s
+  box-shadow none
+  background-image radial-gradient(ellipse at center, rgba(255,255,255,.4), rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.95) 150%)
+  //border alpha(#fff, .15) solid 2px
+  text-align center
+
+// #meat figure:hover span
+//   opacity .5
+
+.gold-filter
+  box-shadow: inset 0 .2em .4em 0 #FFF, inset 0 -0.2em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
+  transition transform 0.8s
+  //transform translateX(50%) translateY(-100%)
+  //background-color rgba($accent, .05)
+  opacity 1
+  // border-bottom-right-radius 25% !important
+  // border-bottom-left-radius 25% !important
+
+  //background-image linear-gradient(45deg, rgba(194, 233, 221, 0.8) 1%, rgba(104, 119, 132, 0.25) 100%), linear-gradient(-45deg, #351141 0%, rgba(217, 230, 185, 0.25) 80%)
+  //background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fffcaf,1) 26%, rgba(#fdd333,1) 35%, rgba(#b67b03,1) 45%, rgba(#341c02,1) 61%, rgba(#160f07,1) 100%)
+  // background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 36%, rgba(#fffcaf,1) 43%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 70%, rgba(#160f07,1) 100%)
+  // background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
+  background-image linear-gradient(45deg, rgba(#222,1) 0%, rgba(#efefef,1) 26%, rgba(#fff,1) 35%, rgba(#999,1) 55%, rgba(#666,1) 80%, rgba(#222,1) 100%)
+
+.color-filter
+  // background-color rgba($accent, .03)
+  opacity .5
+  //background-image linear-gradient(45deg, rgba(#463c2c,.3) 0%, rgba(#fdd333,.3) 26%, rgba(#fffcaf,.5) 35%, rgba(#b67b03,.4) 55%, rgba(#341c02,.3) 80%, rgba(#160f07,.3) 100%)
+
+
+.gold-bar
+  background-size 100%
+  float left
+  width 100%
+  height 2px
+  //box-shadow: inset 0 .2em .4em 0 #FFF, inset 0 -0.2em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
+  background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
+
+// Navigation
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header nav a
+  text-transform uppercase
+
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6
+//   -webkit-mask-image url('../images/text-mask.png')
+//   -o-mask-image url('../images/text-mask.png')
+//   -moz-mask-image url('../images/text-mask.png')
+//   mask-image url('../images/text-mask.png')
+  //text-shadow 0px 0px 30px rgba(30, 28, 28, 0.6)
+
+
+
+// Typography
+p
+  //font-family "Courier New", Courier, monospace
+  font-size .8rem
+
+// nav a:hover
+//   transition background 0.2s
+//   background-color $accent !important
+
+
+
+
+section.full .slick-prev
+  left 1rem
+
+section.full .slick-next
+  right 1rem
+
+
+// footer:before, .bg-paper:after
+//   content ""
+//   width 100%
+//   position relative
+//   height 50px
+//   float left
+//   position absolute
+//   top 0
+//   background-image -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25rem, #666), color-stop(0.25rem, #666))
+//   background-image linear-gradient(135deg, #666 25%, transparent 25%), linear-gradient(225deg, #666 25%, transparent 25%)
+//   background-position 50%
+//   background-repeat repeat-x
+//   background-size 50px 100%
+
+
+// .bg-wood,
+// figure span:nth-child(2)
+//   /** To edit this background, follow this link:
+//   http://svgeneration.com/generate/Wood-Grain?base-color=f2e8d3&grain-color=c28c6d&grain-weight=1.5&turbulence-weight=0.15&
+//   */
+//   background-size 100%
+//   background-repeat repeat
+//   background-color #f2e8d3
+//   background-image url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2MDAnIGhlaWdodD0nNCc+Cgk8ZGVmcyBpZD0nZGVmczQnPgoJCTxmaWx0ZXIgeT0nMCcgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSdzUkdCJyBpZD0ndCc+CgkJCTxmZVR1cmJ1bGVuY2UgdHlwZT0nZnJhY3RhbE5vaXNlJyBiYXNlRnJlcXVlbmN5PScuOCAwJyByZXN1bHQ9J291dDEnIG51bU9jdGF2ZXM9JzEnLz4KCQkJPGZlQ29sb3JNYXRyaXggdHlwZT0nc2F0dXJhdGUnIGluPSdvdXQxJyByZXN1bHQ9J291dDInIHZhbHVlcz0nMCcvPgoJCQk8ZmVDb21wb3NpdGUgb3BlcmF0b3I9J2FyaXRobWV0aWMnIGsxPScwJyBrMj0nMC4xNScgazM9JzAnIGs0PScwJyBpbj0nb3V0MicgaW4yPSdvdXQxJy8+CgkJPC9maWx0ZXI+Cgk8L2RlZnM+Cgk8cmVjdCBmaWxsPScjYzI4YzZkJyBmaWxsLW9wYWNpdHk9JzAuMTUwMDAwMDAwMDAwMDAwMDInIHg9JzUlJyB5PSctNSUnIHdpZHRoPScxMCUnIGhlaWdodD0nMTEwJScvPgoJPHJlY3QgZmlsbD0nI2MyOGM2ZCcgZmlsbC1vcGFjaXR5PScwLjA2JyB4PSc2JScgeT0nLTUlJyB3aWR0aD0nMTAlJyBoZWlnaHQ9JzExMCUnLz4KCTxyZWN0IGZpbGw9JyNjMjhjNmQnIGZpbGwtb3BhY2l0eT0nMC4wNicgeD0nNyUnIHk9Jy01JScgd2lkdGg9JzE0JScgaGVpZ2h0PScxMTAlJy8+Cgk8cmVjdCBmaWxsPScjYzI4YzZkJyBmaWxsLW9wYWNpdHk9JzAuMDYnIHg9JzklJyB5PSctNSUnIHdpZHRoPScyMCUnIGhlaWdodD0nMTEwJScvPgoJPHJlY3QgZmlsbD0nI2MyOGM2ZCcgZmlsbC1vcGFjaXR5PScwLjA2JyB4PScxMSUnIHk9Jy01JScgd2lkdGg9JzEwJScgaGVpZ2h0PScxMTAlJy8+Cgk8cmVjdCBmaWxsPScjYzI4YzZkJyBmaWxsLW9wYWNpdHk9JzAuMTInIHg9JzU1JScgeT0nLTUlJyB3aWR0aD0nNDAlJyBoZWlnaHQ9JzExMCUnLz4KCTxyZWN0IGZpbGw9JyNjMjhjNmQnIGZpbGwtb3BhY2l0eT0nMC4wNDUnIHg9JzYyJScgeT0nLTUlJyB3aWR0aD0nMzUlJyBoZWlnaHQ9JzExMCUnLz4KCTxyZWN0IGZpbGw9JyNjMjhjNmQnIGZpbGwtb3BhY2l0eT0nMC4xMDUwMDAwMDAwMDAwMDAwMScgeD0nMzglJyB5PSctNSUnIHdpZHRoPScyMCUnIGhlaWdodD0nMTEwJScvPgoJPHJlY3QgZmlsbD0nI2MyOGM2ZCcgZmlsbC1vcGFjaXR5PScwLjA0NScgeD0nODUlJyB5PSctNSUnIHdpZHRoPSc0MCUnIGhlaWdodD0nMTEwJScvPgoJPHJlY3QgZmlsbD0nI2MyOGM2ZCcgZmlsbC1vcGFjaXR5PScwLjA3NTAwMDAwMDAwMDAwMDAxJyB4PSc1MiUnIHk9Jy01JScgd2lkdGg9JzQwJScgaGVpZ2h0PScxMTAlJy8+Cgk8cmVjdCBzdHlsZT0nZmlsdGVyOnVybCgjdCknIHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDAlJy8+Cjwvc3ZnPg==')
+//
+
+
+.bg-paper:after
+  content ""
+  width 100%
+  position relative
+  height 50px
+  float left
+  position absolute
+  top 0
+  margin 0 !important
+  background-image -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, #fff), color-stop(0.25, #fff))
+  background-image linear-gradient(135deg, #fff 25%, transparent 25%), linear-gradient(225deg, #fff 25%, transparent 25%)
+  background-position 50%
+  background-repeat repeat-x
+  background-size 50px 100%
+
+.bbg-a:after
+  background-image -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, $accent), color-stop(0.25, $accent))
+  background-image linear-gradient(135deg, $accent 25%, transparent 25%), linear-gradient(225deg, $accent 25%, transparent 25%)
+
+
+// Single Product
+.banner-mask
+  background-position right top
+  background-size cover
+  position relative
+
+
+
+
+
+.title
+  font-weight: 300;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  //font-size:120px;
+  background: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+  background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
+
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position:relative;
+  text-align:center;
+  //line-height:90px;
+
+.subtitle
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top:10px;
+
+
+// //moon
+// .knob, .bg
+//   position: absolute
+//   left: 50%
+//   margin-left: -200px
+//   display: none
+//
+// .circle
+//   display: block
+//   background: transparent
+//   //margin: 15% auto
+//   border-radius: 100%
+//   box-shadow: inset 0 12px 15px 0px white
+//
+// .knob
+//   z-index: 1
+//   -webkit-animation: turn 1.5s linear infinite
+//   -webkit-animation-delay: 1s
+// // @-webkit-keyframes
+// //   0%
+// //     -webkit-transform: rotate(0deg)
+// //   100%
+// //     -webkit-transform: rotate(360deg)
+//
+
+
+
+/** To edit this background, follow this link:
+http://svgeneration.com/generate/Eave-Light Tiles?size=75&fill=39466b&edge-size=2.7&edge=313763&shadow=19203d&
+*/
+.svg-grid
+  box-shadow none
+  background-color: #39466b;
+  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPGRlZnM+CgkJPHBhdHRlcm4gaWQ9J3RpbGUnIHBhdHRlcm5Vbml0cz0ndXNlclNwYWNlT25Vc2UnIHdpZHRoPSc3NScgaGVpZ2h0PSc3NScgdmlld0JveD0nMCAwIDUwIDUwJz4KCQkJPGxpbmUgeDE9JzEnIHkxPScwJyB4Mj0nNTEnIHkyPSc1MCcgc3Ryb2tlPScjMTkyMDNkJyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjMTkyMDNkJyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNTAnIHkxPScwJyB4Mj0nMCcgeTI9JzUwJyBzdHJva2U9JyMzMTM3NjMnIHN0cm9rZS13aWR0aD0nMi43Jy8+CgkJCTxsaW5lIHgxPScwJyB5MT0nMCcgeDI9JzUwJyB5Mj0nNTAnIHN0cm9rZT0nIzMxMzc2Mycgc3Ryb2tlLXdpZHRoPScyLjcnLz4KCQk8L3BhdHRlcm4+CgkJPHJhZGlhbEdyYWRpZW50IGlkPSdsJyBjeD0nNTAlJyBjeT0nMjAwJScgZnk9JzAnIHI9JzIwMSUnPgoJCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojZmZmOyBzdG9wLW9wYWNpdHk6LjE7JyAvPgoJCQk8c3RvcCBvZmZzZXQ9JzEwJScgc3R5bGU9J3N0b3AtY29sb3I6IzAwMDsgc3RvcC1vcGFjaXR5OjAuMTsnIC8+CgkJCTxzdG9wIG9mZnNldD0nMzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6MC4zOycgLz4KCQkJPHN0b3Agb2Zmc2V0PSc5MCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjU1OycgLz4KCQkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6LjYnIC8+CgkJPC9yYWRpYWxHcmFkaWVudD4KCTwvZGVmcz4KCTxyZWN0IGZpbGw9JyMzOTQ2NmInIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IGZpbGw9J3VybCgjdGlsZSknIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjbCknLz4KPC9zdmc+');
+  /** To edit this background, follow this link:
+  http://svgeneration.com/generate/Eave-Light Tiles?size=75&fill=6e6e6e&edge-size=2.7&edge=4f4f4f&shadow=383838&
+  */
+  background-color: #6e6e6e;
+  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPGRlZnM+CgkJPHBhdHRlcm4gaWQ9J3RpbGUnIHBhdHRlcm5Vbml0cz0ndXNlclNwYWNlT25Vc2UnIHdpZHRoPSc3NScgaGVpZ2h0PSc3NScgdmlld0JveD0nMCAwIDUwIDUwJz4KCQkJPGxpbmUgeDE9JzEnIHkxPScwJyB4Mj0nNTEnIHkyPSc1MCcgc3Ryb2tlPScjMzgzODM4JyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjMzgzODM4JyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNTAnIHkxPScwJyB4Mj0nMCcgeTI9JzUwJyBzdHJva2U9JyM0ZjRmNGYnIHN0cm9rZS13aWR0aD0nMi43Jy8+CgkJCTxsaW5lIHgxPScwJyB5MT0nMCcgeDI9JzUwJyB5Mj0nNTAnIHN0cm9rZT0nIzRmNGY0Zicgc3Ryb2tlLXdpZHRoPScyLjcnLz4KCQk8L3BhdHRlcm4+CgkJPHJhZGlhbEdyYWRpZW50IGlkPSdsJyBjeD0nNTAlJyBjeT0nMjAwJScgZnk9JzAnIHI9JzIwMSUnPgoJCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojZmZmOyBzdG9wLW9wYWNpdHk6LjE7JyAvPgoJCQk8c3RvcCBvZmZzZXQ9JzEwJScgc3R5bGU9J3N0b3AtY29sb3I6IzAwMDsgc3RvcC1vcGFjaXR5OjAuMTsnIC8+CgkJCTxzdG9wIG9mZnNldD0nMzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6MC4zOycgLz4KCQkJPHN0b3Agb2Zmc2V0PSc5MCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjU1OycgLz4KCQkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6LjYnIC8+CgkJPC9yYWRpYWxHcmFkaWVudD4KCTwvZGVmcz4KCTxyZWN0IGZpbGw9JyM2ZTZlNmUnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IGZpbGw9J3VybCgjdGlsZSknIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjbCknLz4KPC9zdmc+');
+  /** To edit this background, follow this link:
+  http://svgeneration.com/generate/Eave-Light Tiles?size=75&fill=333333&edge-size=2.7&edge=262626&shadow=121212&
+  */
+  background-color: #333333;
+  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPGRlZnM+CgkJPHBhdHRlcm4gaWQ9J3RpbGUnIHBhdHRlcm5Vbml0cz0ndXNlclNwYWNlT25Vc2UnIHdpZHRoPSc3NScgaGVpZ2h0PSc3NScgdmlld0JveD0nMCAwIDUwIDUwJz4KCQkJPGxpbmUgeDE9JzEnIHkxPScwJyB4Mj0nNTEnIHkyPSc1MCcgc3Ryb2tlPScjMTIxMjEyJyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjMTIxMjEyJyBzdHJva2Utd2lkdGg9JzIuNycvPgoJCQk8bGluZSB4MT0nNTAnIHkxPScwJyB4Mj0nMCcgeTI9JzUwJyBzdHJva2U9JyMyNjI2MjYnIHN0cm9rZS13aWR0aD0nMi43Jy8+CgkJCTxsaW5lIHgxPScwJyB5MT0nMCcgeDI9JzUwJyB5Mj0nNTAnIHN0cm9rZT0nIzI2MjYyNicgc3Ryb2tlLXdpZHRoPScyLjcnLz4KCQk8L3BhdHRlcm4+CgkJPHJhZGlhbEdyYWRpZW50IGlkPSdsJyBjeD0nNTAlJyBjeT0nMjAwJScgZnk9JzAnIHI9JzIwMSUnPgoJCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojZmZmOyBzdG9wLW9wYWNpdHk6LjE7JyAvPgoJCQk8c3RvcCBvZmZzZXQ9JzEwJScgc3R5bGU9J3N0b3AtY29sb3I6IzAwMDsgc3RvcC1vcGFjaXR5OjAuMTsnIC8+CgkJCTxzdG9wIG9mZnNldD0nMzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6MC4zOycgLz4KCQkJPHN0b3Agb2Zmc2V0PSc5MCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjU1OycgLz4KCQkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdHlsZT0nc3RvcC1jb2xvcjojMDAwOyBzdG9wLW9wYWNpdHk6LjYnIC8+CgkJPC9yYWRpYWxHcmFkaWVudD4KCTwvZGVmcz4KCTxyZWN0IGZpbGw9JyMzMzMzMzMnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IGZpbGw9J3VybCgjdGlsZSknIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnLz4KCTxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjbCknLz4KPC9zdmc+');
+
+
+//
+// html, body, div, span, applet, object, iframe,
+// h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+// a, abbr, acronym, address, big, cite, code,
+// del, dfn, em, img, ins, kbd, q, s, samp,
+// small, strike, strong, sub, sup, tt, var,
+// b, u, i, center,
+// dl, dt, dd, ol, ul, li,
+// fieldset, form, label, legend,
+// table, caption, tbody, tfoot, thead, tr, th, td,
+// article, aside, canvas, details, embed,
+// figure, figcaption, footer, header, hgroup,
+// menu, nav, output, ruby, section, summary,
+// time, mark, audio, video
+//   margin 0
+//   padding 0
+//   border 0
+//   //font-size 100%
+//   //font inherit
+//   vertical-align baseline
+//
+// article, aside, details, figcaption, figure,
+// footer, header, hgroup, menu, nav, section, main
+//   display block
+//
+// body
+//   line-height 1
+//
+ol, ul
+  list-style none
+//
+// blockquote, q
+//   quotes none
+//
+// blockquote:before, blockquote:after,
+// q:before, q:after
+//   content ''
+//   content none
+//
+// table
+//   border-collapse collapse
+//   border-spacing 0
+//
+
+*, *::after, *::before
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+.color-1
+  color $accent
+
+.color-2
+  color $accent
+
+.color-3
+  color $accent
+
+.color-4
+  color $accent
+
+.color-5
+  color $accent
+
+
+.cd-header
+  //height 80px
+  width 100%
+  margin 0 auto
+  -webkit-transition -webkit-transform 0.8s
+  -moz-transition -moz-transform 0.8s
+  transition transform 0.8s
+  -webkit-transform translateZ(0)
+  -moz-transform translateZ(0)
+  -ms-transform translateZ(0)
+  -o-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+  &:after
+    content ""
+    display table
+    clear both
+  &.nav-is-visible
+    -webkit-transform translateY(80px)
+    -moz-transform translateY(80px)
+    -ms-transform translateY(80px)
+    -o-transform translateY(80px)
+    transform translateY(80px)
+
+  .cd-logo
+    float left
+    margin-top 28px
+
+.cd-3d-nav
+  position relative
+  height 100%
+  background-color #343c55
+  -webkit-transform translateZ(0)
+  -moz-transform translateZ(0)
+  -ms-transform translateZ(0)
+  -o-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+  -webkit-transform-origin center bottom
+  -moz-transform-origin center bottom
+  -ms-transform-origin center bottom
+  -o-transform-origin center bottom
+  transform-origin center bottom
+  -webkit-transform rotateX(90deg)
+  -moz-transform rotateX(90deg)
+  -ms-transform rotateX(90deg)
+  -o-transform rotateX(90deg)
+  transform rotateX(90deg)
+  -webkit-transition -webkit-transform 0.8s
+  -moz-transition -moz-transform 0.8s
+  transition transform 0.8s
+
+.cd-marker
+  position absolute
+  bottom 0
+  left 0
+  height 3px
+  width 20%
+  background-color currentColor
+  -webkit-transform-origin center bottom
+  -moz-transform-origin center bottom
+  -ms-transform-origin center bottom
+  -o-transform-origin center bottom
+  transform-origin center bottom
+  -webkit-transform translateZ(0) rotateX(90deg)
+  -moz-transform translateZ(0) rotateX(90deg)
+  -ms-transform translateZ(0) rotateX(90deg)
+  -o-transform translateZ(0) rotateX(90deg)
+  transform translateZ(0) rotateX(90deg)
+  -webkit-transition -webkit-transform 0.8s, left 0.8s, color 0.8s, background-color 0.8s
+  -moz-transition -moz-transform 0.8s, left 0.8s, color 0.8s, background-color 0.8s
+  transition transform 0.8s, left 0.8s, color 0.8s, background-color 0.8s
+
+.cd-3d-nav-trigger
+  //position relative
+  z-index 999
+  // float right
+  // height 45px
+  // width 45px
+  overflow hidden
+  text-indent 100%
+  white-space nowrap
+  color transparent
+  span
+    top 21px
+    left 8px
+    -webkit-transition background 0.2s 0.8s
+    -moz-transition background 0.2s 0.8s
+    transition background 0.2s 0.8s
+    &::before
+      bottom 8px
+    &::after
+      top 8px
+
+.cd-3d-nav-trigger span,
+  .cd-3d-nav-trigger span::before,
+  .cd-3d-nav-trigger span::after
+  position absolute
+  width 28px
+  height 3px
+  background-color $body-color
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+
+.cd-3d-nav-trigger span::before, .cd-3d-nav-trigger span:after
+  content ''
+  left 0
+  -webkit-transition -webkit-transform 0.2s 0.8s
+  -moz-transition -moz-transform 0.2s 0.8s
+  transition transform 0.2s 0.8s
+
+.nav-is-visible
+  .cd-3d-nav-trigger
+    span
+      background-color rgba(255, 255, 255, 0)
+      &::before
+        -webkit-transform translateY(8px) rotate(-45deg)
+        -moz-transform translateY(8px) rotate(-45deg)
+        -ms-transform translateY(8px) rotate(-45deg)
+        -o-transform translateY(8px) rotate(-45deg)
+        transform translateY(8px) rotate(-45deg)
+      &::after
+        -webkit-transform translateY(-8px) rotate(45deg)
+        -moz-transform translateY(-8px) rotate(45deg)
+        -ms-transform translateY(-8px) rotate(45deg)
+        -o-transform translateY(-8px) rotate(45deg)
+        transform translateY(-8px) rotate(45deg)
+  .cd-3d-nav
+    -webkit-transform translateZ(0)
+    -moz-transform translateZ(0)
+    -ms-transform translateZ(0)
+    -o-transform translateZ(0)
+    transform translateZ(0)
+    &::after
+      opacity 0
+      visibility hidden
+      -webkit-transition opacity 0.8s 0s, visibility 0s 0.8s
+      -moz-transition opacity 0.8s 0s, visibility 0s 0.8s
+      transition opacity 0.8s 0s, visibility 0s 0.8s
+  .cd-marker
+    -webkit-transform translateZ(0)
+    -moz-transform translateZ(0)
+    -ms-transform translateZ(0)
+    -o-transform translateZ(0)
+    transform translateZ(0)
+
+.nav-is-visible .cd-3d-nav-trigger span::before, .nav-is-visible .cd-3d-nav-trigger span::after
+  background-color $body-color
+
+.cd-3d-nav-container
+  position absolute
+  top 0
+  left 0
+  //height 80px
+  width 100%
+  background-color #000000
+  visibility hidden
+  -webkit-perspective 1000px
+  -moz-perspective 1000px
+  perspective 1000px
+  -webkit-transform translateY(-100%)
+  -moz-transform translateY(-100%)
+  -ms-transform translateY(-100%)
+  -o-transform translateY(-100%)
+  transform translateY(-100%)
+  -webkit-transition -webkit-transform 0.8s 0s, visibility 0s 0.8s
+  -moz-transition -moz-transform 0.8s 0s, visibility 0s 0.8s
+  transition transform 0.8s 0s, visibility 0s 0.8s
+  &.nav-is-visible
+    visibility visible
+    -webkit-transform translateY(0)
+    -moz-transform translateY(0)
+    -ms-transform translateY(0)
+    -o-transform translateY(0)
+    transform translateY(0)
+    -webkit-transition -webkit-transform 0.8s 0s, visibility 0.8s 0s
+    -moz-transition -moz-transform 0.8s 0s, visibility 0.8s 0s
+    transition transform 0.8s 0s, visibility 0.8s 0s
+
+.cd-3d-nav
+  &::after
+    content ''
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 100%
+    background-color #000000
+    opacity 1
+    visibility visible
+    -webkit-transition opacity 0.8s 0s, visibility 0.8s 0s
+    -moz-transition opacity 0.8s 0s, visibility 0.8s 0s
+    transition opacity 0.8s 0s, visibility 0.8s 0s
+  li
+    height 100%
+    width 20%
+    float left
+    &:first-of-type
+      a
+        &::before
+          background-image url(../images/icon-1.svg)
+    &:nth-of-type(2)
+      a
+        &::before
+          background-image url(../images/icon-2.svg)
+    &:nth-of-type(3)
+      a
+        &::before
+          background-image url(../images/icon-3.svg)
+    &:nth-of-type(4)
+      a
+        &::before
+          background-image url(../images/icon-4.svg)
+    &:nth-of-type(5)
+      a
+        &::before
+          background-image url(../images/icon-5.svg)
+  a
+    position relative
+    display block
+    height 100%
+    color transparent
+    -webkit-transition background-color 0.2s
+    -moz-transition background-color 0.2s
+    transition background-color 0.2s
+    &::before
+      content ''
+      height 32px
+      width 32px
+      position absolute
+      left 50%
+      top 50%
+      bottom auto
+      right auto
+      -webkit-transform translateX(-50%) translateY(-50%)
+      -moz-transform translateX(-50%) translateY(-50%)
+      -ms-transform translateX(-50%) translateY(-50%)
+      -o-transform translateX(-50%) translateY(-50%)
+      transform translateX(-50%) translateY(-50%)
+      background-size 32px 64px
+      background-repeat no-repeat
+      background-position 0 0
+      top 4.4em
+      left 50%
+      right auto
+      -webkit-transform translateX(-50%)
+      -moz-transform translateX(-50%)
+      -ms-transform translateX(-50%)
+      -o-transform translateX(-50%)
+      transform translateX(-50%)
+  .cd-selected
+    a
+      //background-color #212635
+      &::before
+        background-position 0 -32px
+
+.no-touch
+  .cd-3d-nav
+    a
+      &:hover
+        background-color #2b3145
+    .cd-selected
+      a
+        &:hover
+          background-color #212635
+
+.cd-marker
+  &::before
+    content ''
+    position absolute
+    bottom 3px
+    left 50%
+    right auto
+    -webkit-transform translateX(-50%)
+    -moz-transform translateX(-50%)
+    -ms-transform translateX(-50%)
+    -o-transform translateX(-50%)
+    transform translateX(-50%)
+    height 0
+    width 0
+    border 10px solid transparent
+    border-bottom-color inherit
+
+.main
+  float left
+  width 100%
+  -webkit-transition -webkit-transform 0.8s
+  -moz-transition -moz-transform 0.8s
+  transition transform 0.8s
+  -webkit-transform translateZ(0)
+  -moz-transform translateZ(0)
+  -ms-transform translateZ(0)
+  -o-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+
+  &.nav-is-visible
+    -webkit-transform translateY(80px)
+    -moz-transform translateY(80px)
+    -ms-transform translateY(80px)
+    -o-transform translateY(80px)
+    transform translateY(80px)
+
+
+.cd-header.nav-is-visible
+  -webkit-transform translateY(170px)
+  -moz-transform translateY(170px)
+  -ms-transform translateY(170px)
+  -o-transform translateY(170px)
+  transform translateY(170px)
+
+
+.cd-3d-nav-container
+  height 170px
+
+.cd-3d-nav
+  a
+    padding 7.6em 1em 0
+    color $body-color
+    //font-size 1.3rem
+    text-align center
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+
+.main
+  &.nav-is-visible
+    -webkit-transform translateY(170px)
+    -moz-transform translateY(170px)
+    -ms-transform translateY(170px)
+    -o-transform translateY(170px)
+    transform translateY(170px)
+
+
+
+
+
+
+
+
+.parallax
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+  *
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+
+  perspective: 100px
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: auto
+  position: absolute
+  width 100%
+  top: 0
+  //left: 50%
+  right: 0
+  bottom: 0
+  //margin-left: -1500px
+.parallax__layer
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-repeat no-repeat !important
+  .layer,
+  img
+    background-repeat no-repeat
+    display: block
+    position: absolute
+    bottom: 0
+
+.parallax__cover
+  background: #2D112B
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  //height: 2000px
+  z-index: 2
+
+$parallax__layers = 6
+for $i in (0)..($parallax__layers)
+  $x = ($parallax__layers - $i) / 10
+  .parallax__layer__{$i}
+    transform: translateZ((-100 * $x)px) scale($x + 1)
+
+
+
+
+
+
+
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#111 url('../images/home/stars.png') repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url('../images/home/twinkling.png') repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url('../images/home/clouds3.png') repeat top center;
+    z-index:3;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}

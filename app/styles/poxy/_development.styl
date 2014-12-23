@@ -1,0 +1,135 @@
+//////////////////////////////////////////////////////////////////////
+// Development Styles
+/////////////////////////////////////////////////////////////////////
+
+// ZONE COLORS
+$zone-a-color = #00bcd4
+$zone-b-color = #5677fc
+$zone-c-color = #ffc107
+$zone-d-color = #a6e22a
+$zone-e-color = #e0276f
+$zone-f-color = #10e277
+
+// section
+//   border-top alpha(#fff, .1) solid 1px
+//   &:nth-child(2n+2)
+//     background alpha(#fff, .05)
+//   &:before
+//     border-top alpha(#fff, .05) solid 1px
+//   &:after
+//     border-bottom alpha(#fff, .05) solid 1px
+
+.poxy-dev
+  z-index 9999
+
+.poxy-dev span
+
+  font-size .8em
+  padding $s4
+  float left
+  width $cols1
+  height $cols1
+  +zone(E)
+    background $zone-e-color
+    color #fff
+  +zone(D)
+    background $zone-d-color
+    color #fff
+  +zone(C)
+    background $zone-c-color
+    color #fff
+  +zone(B)
+    background $zone-b-color
+    color #000
+  +zone(A)
+    background $zone-a-color
+    color #000
+
+  &:before
+    +zone(E)
+      content 'E '
+    +zone(D)
+      content 'D '
+    +zone(C)
+      content 'C '
+    +zone(B)
+      content 'B '
+    +zone(A)
+      content 'A '
+
+.poxy_dev li:first-child a
+  line-height 2em
+
+.poxy_dev li:first-child a:before
+  font-family sans-serif
+  font-size 55%
+  letter-spacing .12em
+  position absolute
+  text-transform uppercase
+  top 40%
+
+// Grid Column Size
+for $i in (1..40)
+  @media (min-width:(($i * ($column + $gutter) - $gutter) / $em))
+    .logo h2:after,
+    .poxy-dev span:after
+      content '' + $i + 'x'
+
+
+//
+// // Zone figure styling
+// $dev-color-opacity = 10%
+//
+// figure
+//   +zone(E)
+//     background-color alpha($zone-e-color, $dev-color-opacity)
+//     color rgba(255,255,255,0.5)
+//
+//   +zone(D)
+//     background-color alpha($zone-d-color, $dev-color-opacity)
+//     color rgba(255,255,255,0.5)
+//
+//   +zone(C)
+//     background-color alpha($zone-c-color, $dev-color-opacity)
+//     color rgba(255,255,255,0.5)
+//   +zone(B)
+//     background-color alpha($zone-b-color, $dev-color-opacity)
+//     //color #000
+//     color rgba(255,255,255,0.5)
+//
+//   +zone(A)
+//     background-color alpha($zone-a-color, $dev-color-opacity)
+//     //color alpha($zone-a-color, $dev-color-opacity)
+//     color rgba(255,255,255,0.5)
+
+//////////////////////////////////////////////////////
+// DEV COLOR CLASSES
+////////////////////////////////////////////////////
+.hide
+  display none !important
+.red
+  background-color red
+.logo
+  background-size cover
+.bg0
+  background transparent !important
+.bg10
+  background-color darken(#fff, 10%) !important
+.bg20
+  background-color darken(#fff, 20%) !important
+.bg30
+  background-color darken(#fff, 30%) !important
+.bg40
+  background-color darken(#fff, 40%) !important
+.bg50
+  background-color darken(#fff, 50%) !important
+.bg60
+  background-color darken(#fff, 60%) !important
+.bg70
+  background-color darken(#fff, 70%) !important
+.bg80
+  background-color darken(#fff, 80%) !important
+.bg90
+  background-color darken(#fff, 90%) !important
+.bg100
+  background-color darken(#fff, 100%) !important
