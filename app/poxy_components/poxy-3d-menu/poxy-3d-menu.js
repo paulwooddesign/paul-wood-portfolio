@@ -93,3 +93,51 @@ $(document).ready(function(){
     });
   });
 })(jQuery);
+
+
+
+
+var start = 10;
+var end = 57;
+var imgs = [];
+
+for (var i = start; i <= end; i++) {
+  imgs.push('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2361/alcyone'+i+'.jpg');
+}
+
+
+
+var preload = [];
+for (i = 0; i < imgs.length; i++) {
+  preload[i] = new Image()
+  preload[i].src = imgs[i]
+}
+
+
+
+$(window).load(function() {
+
+$.fn.glitch = function(imgs, min, max) {
+  return this.each(function() {
+    var $obj = $(this);
+    var count = 0;
+    var total = imgs.length;
+    function fglitch() {
+      var interval = Math.random()*(max-min)+min;
+      setTimeout(function() {
+        $obj.css('background-image', 'url(\''+imgs[count]+'\'), url(\''+imgs[0]+'\')');
+        if (count < total) {
+          count++;
+        } else {
+          count = 0;
+        }
+        fglitch(imgs[count]);
+      }, interval);
+    };
+    fglitch();
+  });
+};
+
+$('.screen').glitch(imgs, 100, 500);
+
+});
