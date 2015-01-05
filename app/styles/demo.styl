@@ -1,4 +1,4 @@
-poxy_dev = false
+poxy_dev = true
 poxy_skin_3d = false
 /////////////////////////////////
 // DESIGN SETTINGS
@@ -27,13 +27,13 @@ $numerators-E = (E 1) (E 2) (E 3)
 // GRID SETTINGS
 /////////////////////////////////
 
-$gx-A = 28
+$gx-A = 27
 $gy-A = 36
 $gs-A = 2
 
-$gx-B = 28
+$gx-B = 24
 $gy-B = 28
-$gs-B = 2
+$gs-B = 1
 
 $gx-C = 24
 $gy-C = 24
@@ -74,52 +74,98 @@ $zone-e-min = 4
 // font-family: 'Harmonia Sans Std SemiBold'
 
 
-.bg0
-  background transparent !important
-  box-shadow none !important
 
-.bgf
-  background-attachment fixed
 
-.bgrb
-  background-position right bottom
+// My Fonts Bar - Need to find what one to buy
+#mfPreviewBar
+  opacity 0 !important
+
+
+
+
+/////////////////////////////////
+// shape tools
+///////////////////////////////
+
+
+// .br2
+//   border-radius .75rem
+
 
 .bgcb
   background-position center bottom
 
-.bgrt
-  background-position right top
-
-.ofh
-  overflow hidden !important
+section
+  border none !important
 
 
-.bgs100
-  background-size 100% !important
+.parallax__cover .vertical-guides
+  height 300vh
+
+  section
+    border none !important
+
+// .vertical-guides figure figure
+//   &:before,
+//   &:after
+//     z-index 1
+
+.horizontal-guides
+  margin-top 1px
+  section
+    position relative
+  section:after
+    margin 0 !important
+    position absolute !important
+  section:before
+    position absolute !important
+    bottom 0
+
+/////////////////////////////////
+// BG Images
+///////////////////////////////
+
+.gloss
+  border-radius 40%
+  //transform scale(1.5)
+  transition 0.3s
+  box-shadow inset 16em 18em 0 -13em rgba(255,255,255,0.15)
+
 
 /////////////////////////////////
 // Styles
 ///////////////////////////////
 body
-  //font-family 'Lato' sans-serif
   font-family "Harmonia Sans Std Light", "Courier New", Courier, monospace
-  font-size .8rem
-  background-color: #111
-  background url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat
-  background #fff
+  // font-size .8rem
+  background-color #222
+  // background #fff
   letter-spacing 0.3em
   //background-image url(http://subtlepatterns.com/patterns/binding_dark.png)
   //background: repeating-linear-gradient(-45deg, #EFC1CB , #EFC1CB 30px, #F2F2F2 30px, #F2F2F2 40px, #C2E8F5 40px, #C2E8F5 70px,#F2F2F2 70px, #F2F2F2 80px);
 
-// button:hover *
-//   color #fff
 
+
+
+button
+  color rgba(255, 255, 255, 0.6)
+  text-transform uppercase
+  letter-spacing .3rem
+
+button:hover
+  color rgba(255, 255, 255, 1)
+  text-transform uppercase
+  letter-spacing .3rem
+
+
+strong
+  font-family 'Harmonia Sans Std SemiBold'
 
 .box-shadow
   box-shadow: inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .5), 0 3.5em 3em .5em rgba(0, 0, 0, 0.5);
 
 button:hover
-  background-image: linear-gradient(to top, #fff, #aaa);
+  background-image: linear-gradient(to top, #222, #111);
   //background-image linear-gradient(to top, $accent, #575757) !important;
 
 header
@@ -140,6 +186,7 @@ footer
   //background $body-color
   font-size .5rem
 
+
 .thumbs
   figure
     //overflow hidden
@@ -147,44 +194,49 @@ footer
     position relative
     //font-size .8rem
     // background-color rgba(255,255,255,0.10)
-    border-radius 1%
+    background-image linear-gradient(to bottom, #111, #333)
+    //box-shadow inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .2), 0 1.5em 3em -1em rgba(0, 0, 0, 0.5)
+
+
 
     .thumb-title
       color #222
       opacity 0
 
-    span
-      border-radius 1%
 
     .thumb
+      transition 0.2s
+      width 94%
+      height 94%
       //box-shadow inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .2)
       background-position 50% 0%
-      // -webkit-filter: grayscale(80%)
-      // -moz-filter: grayscale(80%)
-      // -ms-filter: grayscale(80%)
-      // -o-filter: grayscale(80%)
-
-      -webkit-filter: grayscale(80%)
-      -moz-filter: grayscale(80%)
-      -ms-filter: grayscale(80%)
-      -o-filter: grayscale(80%)
+      filter: grayscale(90%)
 
 section
-  background -moz-linear-gradient(top,  rgba(39,39,39,1) 0%, rgba(39,39,39,0) 100%)
-  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(39,39,39,1)), color-stop(100%,rgba(39,39,39,0)))
-  background -webkit-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
-  background -o-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
-  background -ms-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
-  background #222 linear-gradient(to bottom,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%) !important
-  &:before,
-  &:after
-    display none
-
+  // background -moz-linear-gradient(top,  rgba(39,39,39,1) 0%, rgba(39,39,39,0) 100%)
+  // background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(39,39,39,1)), color-stop(100%,rgba(39,39,39,0)))
+  // background -webkit-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+  // background -o-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+  // background -ms-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+  background linear-gradient(to bottom,  rgba(39,39,39,.9) 0%,rgba(39,39,39,.25) 100%) !important
+  // &:before,
+  // &:after
+  //   display none
+//
+// .parallax
+//
+//   background -moz-linear-gradient(top,  rgba(39,39,39,1) 0%, rgba(39,39,39,0) 100%)
+//   background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(39,39,39,1)), color-stop(100%,rgba(39,39,39,0)))
+//   background -webkit-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+//   background -o-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+//   background -ms-linear-gradient(top,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%)
+//   background #222 linear-gradient(to bottom,  rgba(39,39,39,1) 0%,rgba(39,39,39,0) 100%) !important
+//   background-size cover
 
 
 
 .page-head
-    font-size 95px
+    //font-size 95px
     font-weight bold
     color #3d3d3d
     margin-top 20px
@@ -218,21 +270,29 @@ section
 
 
   figure:hover
-    box-shadow: inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
+    // box-shadow: inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
     position relative
     //font-size .8rem
     background-color rgba(255,255,255,0.10)
     //border-radius 3px
 
+    .gloss
+      border-radius 20%
+      //transform scale(1.5)
+      transition 0.2s
+      box-shadow inset 5em 5em 0 -16em rgba(255,255,255,0.3)
+
 
 
     .thumb
-      -webkit-filter: grayscale(0%)
-      -moz-filter: grayscale(0%)
-      -ms-filter: grayscale(0%)
-      -o-filter: grayscale(0%)
+      // box-shadow inset 0 .2em .5em 0 #FFF, inset 0 -0.3em .4em 0px rgba(0, 0, 0, .2)
+      filter: grayscale(0%)
+      transition 0.2s
+      width 100%
+      height 100%
 
     .shadow
+      transition opacity 0.3s
       opacity 0
 
     .color-filter
@@ -246,12 +306,13 @@ section
 
 
 
-
 //#meat figure span,
 .shadow
+  width 94%
+  height 94%
   transition opacity 0.8s
   box-shadow none
-  background-image radial-gradient(ellipse at center, rgba(255,255,255,.4), rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.95) 150%)
+  background-image radial-gradient(ellipse at center, rgba(255,255,255,.2), rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.95) 150%)
   //border alpha(#fff, .15) solid 2px
   text-align center
 
@@ -259,10 +320,12 @@ section
 //   opacity .5
 
 .gold-filter
-  box-shadow: inset 0 .2em .4em 0 #FFF, inset 0 -0.2em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
+  //box-shadow: inset 0 .2em .4em 0 #FFF, inset 0 -0.2em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
   transition transform 0.8s
   //transform translateX(50%) translateY(-100%)
   //background-color rgba($accent, .05)
+  width 95%
+  height 95%
   opacity 1
   // border-bottom-right-radius 25% !important
   // border-bottom-left-radius 25% !important
@@ -270,8 +333,8 @@ section
   //background-image linear-gradient(45deg, rgba(194, 233, 221, 0.8) 1%, rgba(104, 119, 132, 0.25) 100%), linear-gradient(-45deg, #351141 0%, rgba(217, 230, 185, 0.25) 80%)
   //background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fffcaf,1) 26%, rgba(#fdd333,1) 35%, rgba(#b67b03,1) 45%, rgba(#341c02,1) 61%, rgba(#160f07,1) 100%)
   // background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 36%, rgba(#fffcaf,1) 43%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 70%, rgba(#160f07,1) 100%)
-  // background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
-  background-image linear-gradient(45deg, rgba(#222,1) 0%, rgba(#efefef,1) 26%, rgba(#fff,1) 35%, rgba(#999,1) 55%, rgba(#666,1) 80%, rgba(#222,1) 100%)
+  background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
+  // background-image linear-gradient(45deg, rgba(#222,1) 0%, rgba(#efefef,1) 26%, rgba(#fff,1) 35%, rgba(#999,1) 55%, rgba(#666,1) 80%, rgba(#222,1) 100%)
 
 .color-filter
   // background-color rgba($accent, .03)
@@ -282,14 +345,15 @@ section
 .gold-bar
   background-size 100%
   float left
+  opacity .4
   width 100%
-  height 2px
+  height 1px
   //box-shadow: inset 0 .2em .4em 0 #FFF, inset 0 -0.2em .4em 0px rgba(0, 0, 0, .3), 0 .5em 2em -1em rgba(0, 0, 0, 0.5);
   background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
-  -webkit-filter: grayscale(100%)
-  -moz-filter: grayscale(100%)
-  -ms-filter: grayscale(100%)
-  -o-filter: grayscale(100%)
+  // -webkit-filter: grayscale(100%)
+  // -moz-filter: grayscale(100%)
+  // -ms-filter: grayscale(100%)
+  // -o-filter: grayscale(100%)
 
 // Navigation
 h1,
@@ -389,22 +453,28 @@ section.full .slick-next
   position relative
 
 
-
-
+.title.mega
+  letter-spacing .18rem
+  font-weight: 300;
 
 .title
-  font-weight: 300;
+
+
   color: transparent;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   //font-size:120px;
-  background: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+  //background: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
   background-image linear-gradient(45deg, rgba(#463c2c,1) 0%, rgba(#fdd333,1) 26%, rgba(#fffcaf,1) 35%, rgba(#b67b03,1) 55%, rgba(#341c02,1) 80%, rgba(#160f07,1) 100%)
 
   background-position: 40% 50%;
   -webkit-background-clip: text;
   position:relative;
-  text-align:center;
+  //text-align:center;
   //line-height:90px;
+
+
+
+
 
 .subtitle
   display: block;
@@ -957,8 +1027,9 @@ ol, ul
 
 
 
-
-
+.parallax__layer__0
+  opacity .6
+  background url('../images/rainbow-nebula.jpg') repeat
 
 
 
@@ -1027,6 +1098,12 @@ for $i in (0)..($parallax__layers)
   background:#111 url('../images/home/stars.png') repeat top center;
   z-index:0;
 }
+
+
+.bg-stars
+  background #111 url('../images/home/stars.png') repeat top center fixed
+  background url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg")
+
 
 .twinkling{
   background:transparent url('../images/home/twinkling.png') repeat top center;

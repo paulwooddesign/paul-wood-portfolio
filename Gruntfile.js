@@ -399,7 +399,7 @@ module.exports = function (grunt) {
       'stylus:test'
       ],
       dist: [
-      'imagemin',
+      //'imagemin',
       'svgmin'
       ]
     },
@@ -459,7 +459,7 @@ module.exports = function (grunt) {
     // www.poxy.io/web/content/test
     sftp: {
       options: {
-        path: '/www.paulwood.me/web/content/pw15',
+        path: '/www.paulwood.me/web/content',
         host: '<%= secret.host %>',
         username: '<%= secret.username %>',
         password: '<%= secret.password %>',
